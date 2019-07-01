@@ -1,0 +1,11 @@
+/.idea
+/.vscode
+/vendor
+*.log
+thinkphp
+.DS_Store
+/uploads
+composer.lock
+.env
+.env.local
+runtime
