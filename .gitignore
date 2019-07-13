@@ -7,5 +7,4 @@ thinkphp
 /uploads
 composer.lock
 .env
-.env.local
 runtime
