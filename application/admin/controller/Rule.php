@@ -201,4 +201,31 @@ class Rule extends Auth
         }
         return result(STATUS_CODE::SUCCESS, $permission);
     }
+
+    /**
+     * @purpose 菜单排序
+     * @param Request $request
+     * @return array
+     */
+    public function sort (Request $request)
+    {
+        $data = $request->post();
+        if (!$data) {
+            return result(
+                STATUS_CODE::DATA_NOT_FIND,
+                '参数错误'
+            );
+        }
+        $model = new \app\model\Rule();
+        $result = $model
+            ->isUpdate(true)
+            ->saveAll($data);
+        if ($result) {
+            return result();
+        }
+        return result(
+            STATUS_CODE::UPDATE_FAIL,
+            '更新失败'
+        );
+    }
 }

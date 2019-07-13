@@ -110,7 +110,7 @@ class Rule extends Base
      */
     public function getListByPid(
         int $pid = 0,
-        string $fields = 'id,pid,name,identification,icon_class,icon_family,type,address')
+        string $fields = 'id,pid,name,identification,icon_class,icon_family,type,address,sort')
     {
 //        return self::withCount('rules')
 //            ->where('pid', $pid)
@@ -130,6 +130,7 @@ class Rule extends Base
         $list = $this
             ->where('pid', $pid)
             ->field($fields)
+            ->order('sort asc')
             ->select();
         // 获取ID集合
         $ids = [];

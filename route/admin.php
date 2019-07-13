@@ -30,6 +30,8 @@ Route::domain('admin-api', function () {
     Route::post('rule.update', 'Rule/update');
     // 删除权限
     Route::post('rule.delete', 'Rule/delete');
+    // 排序
+    Route::post('rule.sort', 'Rule/sort');
     // 根据pid获取权限
     Route::get('rule.get_list_by_pid', 'Rule/getListByPid');
     // 获取无限极格式的数据
